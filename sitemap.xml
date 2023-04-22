@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://github.com/TUHHStartupEngineers/quarto_journal_template/index.html</loc>
+    <lastmod>2023-04-19T19:22:42.109Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/TUHHStartupEngineers/quarto_journal_template/content/02_notes/05_class_notes.html</loc>
+    <lastmod>2023-04-19T19:22:44.189Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/TUHHStartupEngineers/quarto_journal_template/content/03_other/06_links.html</loc>
+    <lastmod>2023-04-19T19:22:44.545Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/TUHHStartupEngineers/quarto_journal_template/content/01_journal/04_data_visualization.html</loc>
+    <lastmod>2023-04-19T19:22:44.905Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/TUHHStartupEngineers/quarto_journal_template/content/01_journal/02_data_acquisition.html</loc>
+    <lastmod>2023-04-19T19:22:45.257Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/TUHHStartupEngineers/quarto_journal_template/content/01_journal/03_data_wrangling.html</loc>
+    <lastmod>2023-04-19T19:22:45.629Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/TUHHStartupEngineers/quarto_journal_template/content/01_journal/01_tidyverse.html</loc>
+    <lastmod>2023-04-19T19:22:58.497Z</lastmod>
+  </url>
+</urlset>
