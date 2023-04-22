@@ -1,0 +1,19 @@
+author: "Joschka Schwarz"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    toc-title: Contents
+    number-sections: true
+    number-depth: 2
+    df-print: paged
+    # code-overflow: scroll
+    code-line-numbers: true
+    code-link: true
+    code-summary: "Show the code"
+
+knitr:
+  opts_chunk: 
+    comment: "#>"
+    R.options:
+      dplyr.summarise.inform = FALSE

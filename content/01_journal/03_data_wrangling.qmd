@@ -1,0 +1,8 @@
+---
+title: "Data Wrangling"
+author: "Joschka Schwarz"
+---
+
+::: callout-note
+You can delete everything in here and start fresh.
+:::

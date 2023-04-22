@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "content/03_other/06_links.html",
+    "href": "content/03_other/06_links.html",
+    "title": "Links",
+    "section": "",
+    "text": "R is a free open-source programming language that can be used for statistical analysis, data-simulation, graphing, and lots of other stuff. Another free program is R-studio, that provides a nice graphic interface for R. Download R first, then download R-studio. Both can run on PCs, Macs or Linux. Students will be learning R in the stats labs using the lab manual .\n\n\n\n\nGoogle is great, Google your problem\nStackoverflow is great, google will often take you there because someone has already asked your question, and someone else has answered, usually many people have answered your question many ways."
+  },
+  {
+    "objectID": "content/01_journal/03_data_wrangling.html",
+    "href": "content/01_journal/03_data_wrangling.html",
+    "title": "Data Wrangling",
+    "section": "",
+    "text": "Note\n\n\n\nYou can delete everything in here and start fresh."
+  },
+  {
+    "objectID": "content/01_journal/04_data_visualization.html",
+    "href": "content/01_journal/04_data_visualization.html",
+    "title": "Data Visualization",
+    "section": "",
+    "text": "Note\n\n\n\nYou can delete everything in here and start fresh."
+  },
+  {
+    "objectID": "content/01_journal/01_tidyverse.html",
+    "href": "content/01_journal/01_tidyverse.html",
+    "title": "Tidyverse",
+    "section": "",
+    "text": "Note\n\n\n\nYou can delete everything in here and start fresh.\nThis is a .qmd file. It is plain text with special features. Any time you write just like this, it will be compiled to normal text in the website. If you put a # in front of your text, it will create a top level-header.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "content/01_journal/01_tidyverse.html#header-2",
+    "href": "content/01_journal/01_tidyverse.html#header-2",
+    "title": "Tidyverse",
+    "section": "\n2.1 Header 2",
+    "text": "2.1 Header 2\nHeader 3\nHeader 4\nHeader 5\nHeader 6"
+  },
+  {
+    "objectID": "content/01_journal/02_data_acquisition.html",
+    "href": "content/01_journal/02_data_acquisition.html",
+    "title": "Data Acquisition",
+    "section": "",
+    "text": "Note\n\n\n\nYou can delete everything in here and start fresh."
+  },
+  {
+    "objectID": "content/02_notes/05_class_notes.html",
+    "href": "content/02_notes/05_class_notes.html",
+    "title": "Class Notes",
+    "section": "",
+    "text": "IMPORTANT: You can delete everything in here and start fresh. You might want to start by not deleting anything above this line until you know what that stuff is doing.\nThis is an .qmd file. It is plain text with special features. Any time you write just like this, it will be compiled to normal text in the website. If you put a # in front of your text, it will create a top level-header."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "My Lab Journal",
+    "section": "",
+    "text": "This is a template example for lab journaling. Students in the data science courses at the Institute of Entrepreneurship will use this template to learn R for business analytics. Students can replace this text as they wish."
+  },
+  {
+    "objectID": "index.html#how-to-use",
+    "href": "index.html#how-to-use",
+    "title": "My Lab Journal",
+    "section": "How to use",
+    "text": "How to use\n\nAccept the assignment and get your own github repo.\nBlog/journal what you are doing in R, by editing the .qmd files.\nSee the links page for lots of helpful links on learning R.\nChange everything to make it your own.\nMake sure to render you website everytime before you want to upload changes"
+  }
+]
