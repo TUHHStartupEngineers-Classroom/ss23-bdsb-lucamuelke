@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.2.335">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 <meta name="author" content="Joschka Schwarz">
+
 <title>MyLabJournal - Tidyverse</title>
 <style>
 code{white-space: pre-wrap;}
@@ -83,6 +86,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
@@ -104,7 +108,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -122,13 +127,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit"
   }
-}</script><link href="../../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+}</script>
+
+<link href="../../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="../../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+
 </head>
+
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">MyLabJournal</span>
@@ -139,7 +151,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-<li class="nav-item">
+  <li class="nav-item">
     <a class="nav-link" href="../../index.html">
  <span class="menu-text">Home</span></a>
   </li>  
@@ -147,8 +159,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-journal" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Journal</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-journal">
-<li>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-journal">    
+        <li>
     <a class="dropdown-item" href="../../content/01_journal/01_tidyverse.html">
  <span class="dropdown-text">01 Tidyverse</span></a>
   </li>  
@@ -165,7 +177,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  <span class="dropdown-text">04 Data Visualization</span></a>
   </li>  
     </ul>
-</li>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="../../content/02_notes/05_class_notes.html">
  <span class="menu-text">Class notes</span></a>
@@ -175,34 +187,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  <span class="menu-text">Links</span></a>
   </li>  
 </ul>
-<div class="quarto-toggle-container">
+              <div class="quarto-toggle-container">
                   <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
               </div>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
-    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
    
   <ul class="collapse">
-<li><a href="#text-formatting" id="toc-text-formatting" class="nav-link active" data-scroll-target="#text-formatting"><span class="toc-section-number">1</span>  Text Formatting</a></li>
-  <li>
-<a href="#headings" id="toc-headings" class="nav-link" data-scroll-target="#headings"><span class="toc-section-number">2</span>  Headings</a>
+  <li><a href="#text-formatting" id="toc-text-formatting" class="nav-link active" data-scroll-target="#text-formatting"><span class="toc-section-number">1</span>  Text Formatting</a></li>
+  <li><a href="#headings" id="toc-headings" class="nav-link" data-scroll-target="#headings"><span class="toc-section-number">2</span>  Headings</a>
   <ul class="collapse">
-<li><a href="#header-2" id="toc-header-2" class="nav-link" data-scroll-target="#header-2"><span class="toc-section-number">2.1</span>  Header 2</a></li>
-  </ul>
-</li>
+  <li><a href="#header-2" id="toc-header-2" class="nav-link" data-scroll-target="#header-2"><span class="toc-section-number">2.1</span>  Header 2</a></li>
+  </ul></li>
   <li><a href="#links-images" id="toc-links-images" class="nav-link" data-scroll-target="#links-images"><span class="toc-section-number">3</span>  Links &amp; Images</a></li>
   <li><a href="#lists" id="toc-lists" class="nav-link" data-scroll-target="#lists"><span class="toc-section-number">4</span>  Lists</a></li>
   <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables"><span class="toc-section-number">5</span>  Tables</a></li>
   <li><a href="#source-code" id="toc-source-code" class="nav-link" data-scroll-target="#source-code"><span class="toc-section-number">6</span>  Source Code</a></li>
-  </ul></nav>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
 <h1 class="title">Tidyverse</h1>
 </div>
 
@@ -222,7 +240,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </div>
   
 
-</header><div class="callout-note callout callout-style-default callout-captioned">
+</header>
+
+<div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -237,8 +257,8 @@ Note
 </div>
 <p>This is a <code>.qmd</code> file. It is plain text with special features. Any time you write just like this, it will be compiled to normal text in the website. If you put a # in front of your text, it will create a top level-header.</p>
 <p>To learn more about Quarto websites visit <a href="https://quarto.org/docs/websites" class="uri">https://quarto.org/docs/websites</a>.</p>
-<section id="text-formatting" class="level1" data-number="1"><h1 data-number="1">
-<span class="header-section-number">1</span> Text Formatting</h1>
+<section id="text-formatting" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Text Formatting</h1>
 <p><em>italics</em> and <strong>bold</strong></p>
 <p>superscript<sup>2</sup> / subscript<sub>2</sub></p>
 <p><del>strikethrough</del></p>
@@ -246,51 +266,61 @@ Note
 <blockquote class="blockquote">
 <p>Blockquote</p>
 </blockquote>
-</section><section id="headings" class="level1" data-number="2"><h1 data-number="2">
-<span class="header-section-number">2</span> Headings</h1>
-<section id="header-2" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="header-2">
-<span class="header-section-number">2.1</span> Header 2</h2>
-<section id="header-3" class="level3"><h3 class="anchored" data-anchor-id="header-3">Header 3</h3>
-<section id="header-4" class="level4"><h4 class="anchored" data-anchor-id="header-4">Header 4</h4>
-<section id="header-5" class="level5"><h5 class="anchored" data-anchor-id="header-5">Header 5</h5>
-<section id="header-6" class="level6"><h6 class="anchored" data-anchor-id="header-6">Header 6</h6>
-</section></section></section></section></section></section><section id="links-images" class="level1" data-number="3"><h1 data-number="3">
-<span class="header-section-number">3</span> Links &amp; Images</h1>
+</section>
+<section id="headings" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Headings</h1>
+<section id="header-2" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="header-2"><span class="header-section-number">2.1</span> Header 2</h2>
+<section id="header-3" class="level3">
+<h3 class="anchored" data-anchor-id="header-3">Header 3</h3>
+<section id="header-4" class="level4">
+<h4 class="anchored" data-anchor-id="header-4">Header 4</h4>
+<section id="header-5" class="level5">
+<h5 class="anchored" data-anchor-id="header-5">Header 5</h5>
+<section id="header-6" class="level6">
+<h6 class="anchored" data-anchor-id="header-6">Header 6</h6>
+</section>
+</section>
+</section>
+</section>
+</section>
+</section>
+<section id="links-images" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Links &amp; Images</h1>
 <p><a href="https://quarto.org" class="uri">https://quarto.org</a></p>
 <p><a href="https://quarto.org">Quarto</a></p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="../../assets/img/elephant.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Caption"><img src="../../assets/img/elephant.png" class="img-fluid figure-img"></a></p>
+<figure class="figure">
+<p><a href="../../assets/img/elephant.png" class="lightbox" title="Caption" data-gallery="quarto-lightbox-gallery-1"><img src="../../assets/img/elephant.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Caption</figcaption><p></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="https://quarto.org"><img src="../../assets/img/elephant.png" class="img-fluid figure-img"></a></p>
+<figure class="figure">
+<p><a href="https://quarto.org"><img src="../../assets/img/elephant.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Caption</figcaption><p></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="https://quarto.org" title="An elephant"><img src="../../assets/img/elephant.png" class="img-fluid figure-img"></a></p>
+<figure class="figure">
+<p><a href="https://quarto.org" title="An elephant"><img src="../../assets/img/elephant.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Caption</figcaption><p></p>
 </figure>
 </div>
-</section><section id="lists" class="level1" data-number="4"><h1 data-number="4">
-<span class="header-section-number">4</span> Lists</h1>
+</section>
+<section id="lists" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Lists</h1>
 <ul>
-<li>
-<p>unordered list</p>
+<li><p>unordered list</p>
 <ul>
 <li>sub-item 1</li>
 <li>sub-item 2
 <ul>
 <li>sub-sub-item 1</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>item 2</p>
-<p>Continued (indent 4 spaces)</p>
-</li>
+</ul></li>
+</ul></li>
+<li><p>item 2</p>
+<p>Continued (indent 4 spaces)</p></li>
 </ul>
 <ol type="1">
 <li>ordered list</li>
@@ -299,10 +329,8 @@ Note
 <li>sub-item 1
 <ol type="A">
 <li>sub-sub-item 1</li>
-</ol>
-</li>
-</ol>
-</li>
+</ol></li>
+</ol></li>
 </ol>
 <ol class="example" type="1">
 <li>A list whose numbering</li>
@@ -310,15 +338,19 @@ Note
 <p>continues after</p>
 <ol start="2" class="example" type="1">
 <li>an interruption</li>
-</ol></section><section id="tables" class="level1" data-number="5"><h1 data-number="5">
-<span class="header-section-number">5</span> Tables</h1>
+</ol>
+</section>
+<section id="tables" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Tables</h1>
 <table class="table">
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th style="text-align: right;">Right</th>
 <th style="text-align: left;">Left</th>
 <th>Default</th>
 <th style="text-align: center;">Center</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">12</td>
@@ -339,8 +371,10 @@ Note
 <td style="text-align: center;">1</td>
 </tr>
 </tbody>
-</table></section><section id="source-code" class="level1" data-number="6"><h1 data-number="6">
-<span class="header-section-number">6</span> Source Code</h1>
+</table>
+</section>
+<section id="source-code" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Source Code</h1>
 <p>Use ``` to delimit blocks of source code:</p>
 <pre><code>code</code></pre>
 <p>Add a language to syntax highlight code blocks:</p>
@@ -365,14 +399,18 @@ Note
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">plot</span>(cars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="01_tidyverse_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="01_tidyverse_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure">
+<p><a href="01_tidyverse_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="01_tidyverse_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
 </div>
 
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -621,7 +659,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":true,"closeEffect":"zoom","openEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom","loop":true});</script>
+
 
 
 </body></html>
