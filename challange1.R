@@ -1,12 +1,6 @@
----
-title: "Tidyverse"
-author: "Joschka Schwarz"
----
-
-# Source Code
-
-```{r}
+install.packages("tidyverse")
 library(tidyverse)
+install.packages("readxl")
 library(readxl)
 
 bikes_tbl      <- read_excel(path = "ds_data/01_bike_sales/01_raw_data/bikes.xlsx")
@@ -149,4 +143,3 @@ sales_by_year_cat_1_tbl %>%
     fill = "Main category" # Changes the legend name
   ) + 
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
-```
