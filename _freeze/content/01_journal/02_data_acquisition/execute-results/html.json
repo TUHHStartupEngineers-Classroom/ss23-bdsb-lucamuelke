@@ -1,0 +1,18 @@
+{
+  "hash": "d6cabe524de030931c6fbd75d5bdd039",
+  "result": {
+    "markdown": "---\ntitle: \"Data Acquisition\"\nauthor: \"Joschka Schwarz\"\n---\n\n::: {.cell hash='02_data_acquisition_cache/html/unnamed-chunk-1_b7f52c1837cbff67b5f7c8fe01697fa2'}\n\n```{.r .cell-code}\nlibrary(httr)\nlibrary(jsonlite)\nlibrary(knitr)\n\nurl <- \"https://api.openweathermap.org/data/2.5/weather?q=New+York,US&units=metric&appid=de7f0078e2f8223f211a60f3ee3a2b94\"\nresponse <- GET(url)\n\nif (response$status_code == 200) {\n  weather_data <- fromJSON(rawToChar(response$content))\n  temperature <- weather_data$main$temp\n  humidity <- weather_data$main$humidity\n  wind_speed <- weather_data$wind$speed\n  cloud_cover <- weather_data$clouds$all\n  \n  weather_table <- data.frame(\n    \"Temperature\" = temperature,\n    \"Humidity\" = humidity,\n    \"Wind Speed\" = wind_speed,\n    \"Cloud Cover\" = cloud_cover\n  )\n\n  kable(weather_table, format = \"markdown\")\n} else {\n  cat(\"Error:\", response$status_code, response$reason)\n}\n```\n\n::: {.cell-output-display}\n| Temperature| Humidity| Wind.Speed| Cloud.Cover|\n|-----------:|--------:|----------:|-----------:|\n|       13.13|       71|       5.14|         100|\n:::\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-in-header": [
+        "<link href=\"../../site_libs/pagedtable-1.1/css/pagedtable.css\" rel=\"stylesheet\" />\r\n<script src=\"../../site_libs/pagedtable-1.1/js/pagedtable.js\"></script>\r\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
