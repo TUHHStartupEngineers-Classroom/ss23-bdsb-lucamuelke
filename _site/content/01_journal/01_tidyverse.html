@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.2.335">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="author" content="Joschka Schwarz">
+
+<meta name="author" content="Luca Mülke">
+
 <title>MyLabJournal - Tidyverse</title>
 <style>
 code{white-space: pre-wrap;}
@@ -83,6 +86,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
@@ -104,7 +108,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -122,13 +127,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit"
   }
-}</script><link href="../../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+}</script>
+
+<link href="../../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="../../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+
 </head>
+
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">MyLabJournal</span>
@@ -139,7 +151,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-<li class="nav-item">
+  <li class="nav-item">
     <a class="nav-link" href="../../index.html">
  <span class="menu-text">Home</span></a>
   </li>  
@@ -147,8 +159,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-journal" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Journal</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-journal">
-<li>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-journal">    
+        <li>
     <a class="dropdown-item" href="../../content/01_journal/01_tidyverse.html">
  <span class="dropdown-text">01 Tidyverse</span></a>
   </li>  
@@ -165,7 +177,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  <span class="dropdown-text">04 Data Visualization</span></a>
   </li>  
     </ul>
-</li>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="../../content/02_notes/05_class_notes.html">
  <span class="menu-text">Class notes</span></a>
@@ -175,24 +187,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  <span class="menu-text">Links</span></a>
   </li>  
 </ul>
-<div class="quarto-toggle-container">
+              <div class="quarto-toggle-container">
                   <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
               </div>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
-    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
    
   <ul class="collapse">
-<li><a href="#source-code" id="toc-source-code" class="nav-link active" data-scroll-target="#source-code"><span class="toc-section-number">1</span>  Source Code</a></li>
-  </ul></nav>
+  <li><a href="#source-code" id="toc-source-code" class="nav-link active" data-scroll-target="#source-code"><span class="toc-section-number">1</span>  Source Code</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
 <h1 class="title">Tidyverse</h1>
 </div>
 
@@ -203,7 +223,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Joschka Schwarz </p>
+             <p>Luca Mülke </p>
           </div>
   </div>
     
@@ -212,33 +232,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </div>
   
 
-</header><section id="source-code" class="level1" data-number="1"><h1 data-number="1">
-<span class="header-section-number">1</span> Source Code</h1>
+</header>
+
+<section id="source-code" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Source Code</h1>
 <div class="cell" data-hash="01_tidyverse_cache/html/unnamed-chunk-1_04269c31fce4ed5d8a3d902ac9834eff">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>#&gt; ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-#&gt; ✔ dplyr     1.1.2     ✔ readr     2.1.4
-#&gt; ✔ forcats   1.0.0     ✔ stringr   1.5.0
-#&gt; ✔ ggplot2   3.4.2     ✔ tibble    3.2.1
-#&gt; ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
-#&gt; ✔ purrr     1.0.1     
-#&gt; ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-#&gt; ✖ dplyr::filter() masks stats::filter()
-#&gt; ✖ dplyr::lag()    masks stats::lag()
-#&gt; ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb3-2"><a href="#cb3-2"></a></span>
-<span id="cb3-3"><a href="#cb3-3"></a>bikes_tbl      <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="at">path =</span> <span class="st">"ds_data/01_bike_sales/01_raw_data/bikes.xlsx"</span>)</span>
-<span id="cb3-4"><a href="#cb3-4"></a>orderlines_tbl <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"ds_data/01_bike_sales/01_raw_data/orderlines.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a>bikes_tbl      <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="at">path =</span> <span class="st">"ds_data/01_bike_sales/01_raw_data/bikes.xlsx"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5"></a>orderlines_tbl <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"ds_data/01_bike_sales/01_raw_data/orderlines.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>#&gt; New names:
 #&gt; • `` -&gt; `...1`</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>bikeshops_tbl  <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"ds_data/01_bike_sales/01_raw_data/bikeshops.xlsx"</span>)</span>
-<span id="cb5-2"><a href="#cb5-2"></a></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="fu">left_join</span>(orderlines_tbl, bikes_tbl, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"product.id"</span> <span class="ot">=</span> <span class="st">"bike.id"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>bikeshops_tbl  <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"ds_data/01_bike_sales/01_raw_data/bikeshops.xlsx"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="fu">left_join</span>(orderlines_tbl, bikes_tbl, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"product.id"</span> <span class="ot">=</span> <span class="st">"bike.id"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -247,47 +257,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </script>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>bike_orderlines_joined_tbl <span class="ot">&lt;-</span> orderlines_tbl <span class="sc">%&gt;%</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">left_join</span>(bikes_tbl, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"product.id"</span> <span class="ot">=</span> <span class="st">"bike.id"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a>  <span class="fu">left_join</span>(bikeshops_tbl, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"customer.id"</span> <span class="ot">=</span> <span class="st">"bikeshop.id"</span>))</span>
-<span id="cb6-4"><a href="#cb6-4"></a></span>
-<span id="cb6-5"><a href="#cb6-5"></a>bike_orderlines_wrangled_tbl <span class="ot">&lt;-</span> bike_orderlines_joined_tbl <span class="sc">%&gt;%</span></span>
-<span id="cb6-6"><a href="#cb6-6"></a>  <span class="fu">mutate</span>(<span class="at">total.price =</span> price <span class="sc">*</span> quantity) <span class="sc">%&gt;%</span></span>
-<span id="cb6-7"><a href="#cb6-7"></a>  <span class="fu">separate</span>(<span class="at">col    =</span> location,</span>
-<span id="cb6-8"><a href="#cb6-8"></a>           <span class="at">into   =</span> <span class="fu">c</span>(<span class="st">"city"</span>, <span class="st">"state"</span>),</span>
-<span id="cb6-9"><a href="#cb6-9"></a>           <span class="at">sep    =</span> <span class="st">", "</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb6-10"><a href="#cb6-10"></a>  <span class="fu">separate</span>(<span class="at">col    =</span> category,</span>
-<span id="cb6-11"><a href="#cb6-11"></a>           <span class="at">into   =</span> <span class="fu">c</span>(<span class="st">"category.1"</span>, <span class="st">"category.2"</span>, <span class="st">"category.3"</span>),</span>
-<span id="cb6-12"><a href="#cb6-12"></a>           <span class="at">sep    =</span> <span class="st">" - "</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb6-13"><a href="#cb6-13"></a>  <span class="fu">select</span>(<span class="sc">-</span>...<span class="dv">1</span>, <span class="sc">-</span>gender) <span class="sc">%&gt;%</span></span>
-<span id="cb6-14"><a href="#cb6-14"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">ends_with</span>(<span class="st">".id"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb6-15"><a href="#cb6-15"></a>  <span class="fu">bind_cols</span>(bike_orderlines_joined_tbl <span class="sc">%&gt;%</span> <span class="fu">select</span>(order.id)) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-16"><a href="#cb6-16"></a>  <span class="fu">select</span>(order.id, <span class="fu">contains</span>(<span class="st">"order"</span>), <span class="fu">contains</span>(<span class="st">"model"</span>), <span class="fu">contains</span>(<span class="st">"category"</span>),</span>
-<span id="cb6-17"><a href="#cb6-17"></a>         price, quantity, total.price,</span>
-<span id="cb6-18"><a href="#cb6-18"></a>         <span class="fu">everything</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb6-19"><a href="#cb6-19"></a>  <span class="fu">rename</span>(<span class="at">bikeshop =</span> name) <span class="sc">%&gt;%</span></span>
-<span id="cb6-20"><a href="#cb6-20"></a>  <span class="fu">set_names</span>(<span class="fu">names</span>(.) <span class="sc">%&gt;%</span> <span class="fu">str_replace_all</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">."</span>, <span class="st">"_"</span>))</span>
-<span id="cb6-21"><a href="#cb6-21"></a></span>
-<span id="cb6-22"><a href="#cb6-22"></a><span class="fu">library</span>(lubridate)</span>
-<span id="cb6-23"><a href="#cb6-23"></a></span>
-<span id="cb6-24"><a href="#cb6-24"></a>sales_by_loc_tbl <span class="ot">&lt;-</span> bike_orderlines_wrangled_tbl <span class="sc">%&gt;%</span></span>
-<span id="cb6-25"><a href="#cb6-25"></a>  </span>
-<span id="cb6-26"><a href="#cb6-26"></a>  <span class="co"># Select columns</span></span>
-<span id="cb6-27"><a href="#cb6-27"></a>  <span class="fu">select</span>(state, total_price) <span class="sc">%&gt;%</span></span>
-<span id="cb6-28"><a href="#cb6-28"></a>  </span>
-<span id="cb6-29"><a href="#cb6-29"></a>  <span class="co"># Grouping by year and summarizing sales</span></span>
-<span id="cb6-30"><a href="#cb6-30"></a>  <span class="fu">group_by</span>(state) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-31"><a href="#cb6-31"></a>  <span class="fu">summarize</span>(<span class="at">sales =</span> <span class="fu">sum</span>(total_price)) <span class="sc">%&gt;%</span></span>
-<span id="cb6-32"><a href="#cb6-32"></a>  </span>
-<span id="cb6-33"><a href="#cb6-33"></a>  <span class="co"># Optional: Add a column that turns the numbers into a currency format </span></span>
-<span id="cb6-34"><a href="#cb6-34"></a>  <span class="co"># (makes it in the plot optically more appealing)</span></span>
-<span id="cb6-35"><a href="#cb6-35"></a>  <span class="co"># mutate(sales_text = scales::dollar(sales)) &lt;- Works for dollar values</span></span>
-<span id="cb6-36"><a href="#cb6-36"></a>  <span class="fu">mutate</span>(<span class="at">sales_text =</span> scales<span class="sc">::</span><span class="fu">dollar</span>(sales, <span class="at">big.mark =</span> <span class="st">"."</span>, </span>
-<span id="cb6-37"><a href="#cb6-37"></a>                                     <span class="at">decimal.mark =</span> <span class="st">","</span>, </span>
-<span id="cb6-38"><a href="#cb6-38"></a>                                     <span class="at">prefix =</span> <span class="st">""</span>, </span>
-<span id="cb6-39"><a href="#cb6-39"></a>                                     <span class="at">suffix =</span> <span class="st">" €"</span>))</span>
-<span id="cb6-40"><a href="#cb6-40"></a></span>
-<span id="cb6-41"><a href="#cb6-41"></a>sales_by_loc_tbl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>bike_orderlines_joined_tbl <span class="ot">&lt;-</span> orderlines_tbl <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">left_join</span>(bikes_tbl, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"product.id"</span> <span class="ot">=</span> <span class="st">"bike.id"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">left_join</span>(bikeshops_tbl, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"customer.id"</span> <span class="ot">=</span> <span class="st">"bikeshop.id"</span>))</span>
+<span id="cb4-4"><a href="#cb4-4"></a></span>
+<span id="cb4-5"><a href="#cb4-5"></a>bike_orderlines_wrangled_tbl <span class="ot">&lt;-</span> bike_orderlines_joined_tbl <span class="sc">%&gt;%</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>  <span class="fu">mutate</span>(<span class="at">total.price =</span> price <span class="sc">*</span> quantity) <span class="sc">%&gt;%</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a>  <span class="fu">separate</span>(<span class="at">col    =</span> location,</span>
+<span id="cb4-8"><a href="#cb4-8"></a>           <span class="at">into   =</span> <span class="fu">c</span>(<span class="st">"city"</span>, <span class="st">"state"</span>),</span>
+<span id="cb4-9"><a href="#cb4-9"></a>           <span class="at">sep    =</span> <span class="st">", "</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a>  <span class="fu">separate</span>(<span class="at">col    =</span> category,</span>
+<span id="cb4-11"><a href="#cb4-11"></a>           <span class="at">into   =</span> <span class="fu">c</span>(<span class="st">"category.1"</span>, <span class="st">"category.2"</span>, <span class="st">"category.3"</span>),</span>
+<span id="cb4-12"><a href="#cb4-12"></a>           <span class="at">sep    =</span> <span class="st">" - "</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a>  <span class="fu">select</span>(<span class="sc">-</span>...<span class="dv">1</span>, <span class="sc">-</span>gender) <span class="sc">%&gt;%</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">ends_with</span>(<span class="st">".id"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-15"><a href="#cb4-15"></a>  <span class="fu">bind_cols</span>(bike_orderlines_joined_tbl <span class="sc">%&gt;%</span> <span class="fu">select</span>(order.id)) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-16"><a href="#cb4-16"></a>  <span class="fu">select</span>(order.id, <span class="fu">contains</span>(<span class="st">"order"</span>), <span class="fu">contains</span>(<span class="st">"model"</span>), <span class="fu">contains</span>(<span class="st">"category"</span>),</span>
+<span id="cb4-17"><a href="#cb4-17"></a>         price, quantity, total.price,</span>
+<span id="cb4-18"><a href="#cb4-18"></a>         <span class="fu">everything</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb4-19"><a href="#cb4-19"></a>  <span class="fu">rename</span>(<span class="at">bikeshop =</span> name) <span class="sc">%&gt;%</span></span>
+<span id="cb4-20"><a href="#cb4-20"></a>  <span class="fu">set_names</span>(<span class="fu">names</span>(.) <span class="sc">%&gt;%</span> <span class="fu">str_replace_all</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">."</span>, <span class="st">"_"</span>))</span>
+<span id="cb4-21"><a href="#cb4-21"></a></span>
+<span id="cb4-22"><a href="#cb4-22"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb4-23"><a href="#cb4-23"></a></span>
+<span id="cb4-24"><a href="#cb4-24"></a>sales_by_loc_tbl <span class="ot">&lt;-</span> bike_orderlines_wrangled_tbl <span class="sc">%&gt;%</span></span>
+<span id="cb4-25"><a href="#cb4-25"></a>  </span>
+<span id="cb4-26"><a href="#cb4-26"></a>  <span class="co"># Select columns</span></span>
+<span id="cb4-27"><a href="#cb4-27"></a>  <span class="fu">select</span>(state, total_price) <span class="sc">%&gt;%</span></span>
+<span id="cb4-28"><a href="#cb4-28"></a>  </span>
+<span id="cb4-29"><a href="#cb4-29"></a>  <span class="co"># Grouping by year and summarizing sales</span></span>
+<span id="cb4-30"><a href="#cb4-30"></a>  <span class="fu">group_by</span>(state) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-31"><a href="#cb4-31"></a>  <span class="fu">summarize</span>(<span class="at">sales =</span> <span class="fu">sum</span>(total_price)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-32"><a href="#cb4-32"></a>  </span>
+<span id="cb4-33"><a href="#cb4-33"></a>  <span class="co"># Optional: Add a column that turns the numbers into a currency format </span></span>
+<span id="cb4-34"><a href="#cb4-34"></a>  <span class="co"># (makes it in the plot optically more appealing)</span></span>
+<span id="cb4-35"><a href="#cb4-35"></a>  <span class="co"># mutate(sales_text = scales::dollar(sales)) &lt;- Works for dollar values</span></span>
+<span id="cb4-36"><a href="#cb4-36"></a>  <span class="fu">mutate</span>(<span class="at">sales_text =</span> scales<span class="sc">::</span><span class="fu">dollar</span>(sales, <span class="at">big.mark =</span> <span class="st">"."</span>, </span>
+<span id="cb4-37"><a href="#cb4-37"></a>                                     <span class="at">decimal.mark =</span> <span class="st">","</span>, </span>
+<span id="cb4-38"><a href="#cb4-38"></a>                                     <span class="at">prefix =</span> <span class="st">""</span>, </span>
+<span id="cb4-39"><a href="#cb4-39"></a>                                     <span class="at">suffix =</span> <span class="st">" €"</span>))</span>
+<span id="cb4-40"><a href="#cb4-40"></a></span>
+<span id="cb4-41"><a href="#cb4-41"></a>sales_by_loc_tbl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -296,68 +306,69 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </script>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># state                            sales sales_text  </span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="co"># &lt;chr&gt;                            &lt;dbl&gt; &lt;chr&gt;       </span></span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="co">#   1 Baden-Württemberg              6521090 6.521.090 € </span></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="co"># 2 Bavaria                        6742819 6.742.819 € </span></span>
-<span id="cb7-5"><a href="#cb7-5"></a><span class="co"># 3 Berlin                         1128433 1.128.433 € </span></span>
-<span id="cb7-6"><a href="#cb7-6"></a><span class="co"># 4 Bremen                        10653499 10.653.499 €</span></span>
-<span id="cb7-7"><a href="#cb7-7"></a><span class="co"># 5 Hamburg                        3874756 3.874.756 € </span></span>
-<span id="cb7-8"><a href="#cb7-8"></a><span class="co"># 6 Hesse                          1558901 1.558.901 € </span></span>
-<span id="cb7-9"><a href="#cb7-9"></a></span>
-<span id="cb7-10"><a href="#cb7-10"></a>sales_by_loc_tbl <span class="sc">%&gt;%</span></span>
-<span id="cb7-11"><a href="#cb7-11"></a>  </span>
-<span id="cb7-12"><a href="#cb7-12"></a>  <span class="co"># Setup canvas with the columns year (x-axis) and sales (y-axis)</span></span>
-<span id="cb7-13"><a href="#cb7-13"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> state, <span class="at">y =</span> sales)) <span class="sc">+</span></span>
-<span id="cb7-14"><a href="#cb7-14"></a>  </span>
-<span id="cb7-15"><a href="#cb7-15"></a>  <span class="co"># Geometries</span></span>
-<span id="cb7-16"><a href="#cb7-16"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"#2DC6D6"</span>) <span class="sc">+</span> <span class="co"># Use geom_col for a bar plot</span></span>
-<span id="cb7-17"><a href="#cb7-17"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> sales_text)) <span class="sc">+</span> <span class="co"># Adding labels to the bars</span></span>
-<span id="cb7-18"><a href="#cb7-18"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> <span class="co"># Adding a trendline</span></span>
-<span id="cb7-19"><a href="#cb7-19"></a>  </span>
-<span id="cb7-20"><a href="#cb7-20"></a>  <span class="co"># Formatting</span></span>
-<span id="cb7-21"><a href="#cb7-21"></a>  <span class="co"># scale_y_continuous(labels = scales::dollar) + # Change the y-axis. </span></span>
-<span id="cb7-22"><a href="#cb7-22"></a>  <span class="co"># Again, we have to adjust it for euro values</span></span>
-<span id="cb7-23"><a href="#cb7-23"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">dollar_format</span>(<span class="at">big.mark =</span> <span class="st">"."</span>, </span>
-<span id="cb7-24"><a href="#cb7-24"></a>                                                    <span class="at">decimal.mark =</span> <span class="st">","</span>, </span>
-<span id="cb7-25"><a href="#cb7-25"></a>                                                    <span class="at">prefix =</span> <span class="st">""</span>, </span>
-<span id="cb7-26"><a href="#cb7-26"></a>                                                    <span class="at">suffix =</span> <span class="st">" €"</span>)) <span class="sc">+</span></span>
-<span id="cb7-27"><a href="#cb7-27"></a>  <span class="fu">labs</span>(</span>
-<span id="cb7-28"><a href="#cb7-28"></a>    <span class="at">title    =</span> <span class="st">"Revenue by location"</span>,</span>
-<span id="cb7-29"><a href="#cb7-29"></a>    <span class="at">x =</span> <span class="st">""</span>, <span class="co"># Override defaults for x and y</span></span>
-<span id="cb7-30"><a href="#cb7-30"></a>    <span class="at">y =</span> <span class="st">"Revenue"</span></span>
-<span id="cb7-31"><a href="#cb7-31"></a>  ) <span class="sc">+</span> </span>
-<span id="cb7-32"><a href="#cb7-32"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># state                            sales sales_text  </span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="co"># &lt;chr&gt;                            &lt;dbl&gt; &lt;chr&gt;       </span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="co">#   1 Baden-Württemberg              6521090 6.521.090 € </span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="co"># 2 Bavaria                        6742819 6.742.819 € </span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="co"># 3 Berlin                         1128433 1.128.433 € </span></span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="co"># 4 Bremen                        10653499 10.653.499 €</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="co"># 5 Hamburg                        3874756 3.874.756 € </span></span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="co"># 6 Hesse                          1558901 1.558.901 € </span></span>
+<span id="cb5-9"><a href="#cb5-9"></a></span>
+<span id="cb5-10"><a href="#cb5-10"></a>sales_by_loc_tbl <span class="sc">%&gt;%</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a>  </span>
+<span id="cb5-12"><a href="#cb5-12"></a>  <span class="co"># Setup canvas with the columns year (x-axis) and sales (y-axis)</span></span>
+<span id="cb5-13"><a href="#cb5-13"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> state, <span class="at">y =</span> sales)) <span class="sc">+</span></span>
+<span id="cb5-14"><a href="#cb5-14"></a>  </span>
+<span id="cb5-15"><a href="#cb5-15"></a>  <span class="co"># Geometries</span></span>
+<span id="cb5-16"><a href="#cb5-16"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"#2DC6D6"</span>) <span class="sc">+</span> <span class="co"># Use geom_col for a bar plot</span></span>
+<span id="cb5-17"><a href="#cb5-17"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> sales_text)) <span class="sc">+</span> <span class="co"># Adding labels to the bars</span></span>
+<span id="cb5-18"><a href="#cb5-18"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> <span class="co"># Adding a trendline</span></span>
+<span id="cb5-19"><a href="#cb5-19"></a>  </span>
+<span id="cb5-20"><a href="#cb5-20"></a>  <span class="co"># Formatting</span></span>
+<span id="cb5-21"><a href="#cb5-21"></a>  <span class="co"># scale_y_continuous(labels = scales::dollar) + # Change the y-axis. </span></span>
+<span id="cb5-22"><a href="#cb5-22"></a>  <span class="co"># Again, we have to adjust it for euro values</span></span>
+<span id="cb5-23"><a href="#cb5-23"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">dollar_format</span>(<span class="at">big.mark =</span> <span class="st">"."</span>, </span>
+<span id="cb5-24"><a href="#cb5-24"></a>                                                    <span class="at">decimal.mark =</span> <span class="st">","</span>, </span>
+<span id="cb5-25"><a href="#cb5-25"></a>                                                    <span class="at">prefix =</span> <span class="st">""</span>, </span>
+<span id="cb5-26"><a href="#cb5-26"></a>                                                    <span class="at">suffix =</span> <span class="st">" €"</span>)) <span class="sc">+</span></span>
+<span id="cb5-27"><a href="#cb5-27"></a>  <span class="fu">labs</span>(</span>
+<span id="cb5-28"><a href="#cb5-28"></a>    <span class="at">title    =</span> <span class="st">"Revenue by location"</span>,</span>
+<span id="cb5-29"><a href="#cb5-29"></a>    <span class="at">x =</span> <span class="st">""</span>, <span class="co"># Override defaults for x and y</span></span>
+<span id="cb5-30"><a href="#cb5-30"></a>    <span class="at">y =</span> <span class="st">"Revenue"</span></span>
+<span id="cb5-31"><a href="#cb5-31"></a>  ) <span class="sc">+</span> </span>
+<span id="cb5-32"><a href="#cb5-32"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>#&gt; `geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="01_tidyverse_files/figure-html/unnamed-chunk-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="01_tidyverse_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure">
+<p><a href="01_tidyverse_files/figure-html/unnamed-chunk-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="01_tidyverse_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>sales_by_year_cat_1_tbl <span class="ot">&lt;-</span> bike_orderlines_wrangled_tbl <span class="sc">%&gt;%</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a>  </span>
-<span id="cb9-3"><a href="#cb9-3"></a>  <span class="co"># Select columns and add a year</span></span>
-<span id="cb9-4"><a href="#cb9-4"></a>  <span class="fu">select</span>(order_date, total_price, state) <span class="sc">%&gt;%</span></span>
-<span id="cb9-5"><a href="#cb9-5"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">year</span>(order_date)) <span class="sc">%&gt;%</span></span>
-<span id="cb9-6"><a href="#cb9-6"></a>  </span>
-<span id="cb9-7"><a href="#cb9-7"></a>  <span class="co"># Group by and summarize year and main catgegory</span></span>
-<span id="cb9-8"><a href="#cb9-8"></a>  <span class="fu">group_by</span>(year, state) <span class="sc">%&gt;%</span></span>
-<span id="cb9-9"><a href="#cb9-9"></a>  <span class="fu">summarise</span>(<span class="at">sales =</span> <span class="fu">sum</span>(total_price)) <span class="sc">%&gt;%</span></span>
-<span id="cb9-10"><a href="#cb9-10"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb9-11"><a href="#cb9-11"></a>  </span>
-<span id="cb9-12"><a href="#cb9-12"></a>  <span class="co"># Format $ Text</span></span>
-<span id="cb9-13"><a href="#cb9-13"></a>  <span class="fu">mutate</span>(<span class="at">sales_text =</span> scales<span class="sc">::</span><span class="fu">dollar</span>(sales, <span class="at">big.mark =</span> <span class="st">"."</span>, </span>
-<span id="cb9-14"><a href="#cb9-14"></a>                                     <span class="at">decimal.mark =</span> <span class="st">","</span>, </span>
-<span id="cb9-15"><a href="#cb9-15"></a>                                     <span class="at">prefix =</span> <span class="st">""</span>, </span>
-<span id="cb9-16"><a href="#cb9-16"></a>                                     <span class="at">suffix =</span> <span class="st">" €"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>sales_by_year_cat_1_tbl <span class="ot">&lt;-</span> bike_orderlines_wrangled_tbl <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>  </span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="co"># Select columns and add a year</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>  <span class="fu">select</span>(order_date, total_price, state) <span class="sc">%&gt;%</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">year</span>(order_date)) <span class="sc">%&gt;%</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a>  </span>
+<span id="cb7-7"><a href="#cb7-7"></a>  <span class="co"># Group by and summarize year and main catgegory</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a>  <span class="fu">group_by</span>(year, state) <span class="sc">%&gt;%</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a>  <span class="fu">summarise</span>(<span class="at">sales =</span> <span class="fu">sum</span>(total_price)) <span class="sc">%&gt;%</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a>  </span>
+<span id="cb7-12"><a href="#cb7-12"></a>  <span class="co"># Format $ Text</span></span>
+<span id="cb7-13"><a href="#cb7-13"></a>  <span class="fu">mutate</span>(<span class="at">sales_text =</span> scales<span class="sc">::</span><span class="fu">dollar</span>(sales, <span class="at">big.mark =</span> <span class="st">"."</span>, </span>
+<span id="cb7-14"><a href="#cb7-14"></a>                                     <span class="at">decimal.mark =</span> <span class="st">","</span>, </span>
+<span id="cb7-15"><a href="#cb7-15"></a>                                     <span class="at">prefix =</span> <span class="st">""</span>, </span>
+<span id="cb7-16"><a href="#cb7-16"></a>                                     <span class="at">suffix =</span> <span class="st">" €"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>#&gt; `summarise()` has grouped output by 'year'. You can override using the
 #&gt; `.groups` argument.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>sales_by_year_cat_1_tbl  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>sales_by_year_cat_1_tbl  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -366,49 +377,53 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </script>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="do">## # A tibble: 25 x 4</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="do">##     year category_1      sales sales_text </span></span>
-<span id="cb12-3"><a href="#cb12-3"></a><span class="do">##    &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt; &lt;chr&gt;      </span></span>
-<span id="cb12-4"><a href="#cb12-4"></a><span class="do">##  1  2015 E-Bikes       1599048 1.599.048 €</span></span>
-<span id="cb12-5"><a href="#cb12-5"></a><span class="do">##  2  2015 Gravel         663025 663.025 €  </span></span>
-<span id="cb12-6"><a href="#cb12-6"></a><span class="do">##  3  2015 Hybrid / City  502512 502.512 €  </span></span>
-<span id="cb12-7"><a href="#cb12-7"></a><span class="do">##  4  2015 Mountain      3254289 3.254.289 €</span></span>
-<span id="cb12-8"><a href="#cb12-8"></a><span class="do">##  5  2015 Road          3911408 3.911.408 €</span></span>
-<span id="cb12-9"><a href="#cb12-9"></a><span class="do">##  6  2016 E-Bikes       1916469 1.916.469 €</span></span>
-<span id="cb12-10"><a href="#cb12-10"></a></span>
-<span id="cb12-11"><a href="#cb12-11"></a></span>
-<span id="cb12-12"><a href="#cb12-12"></a>sales_by_year_cat_1_tbl <span class="sc">%&gt;%</span></span>
-<span id="cb12-13"><a href="#cb12-13"></a>  </span>
-<span id="cb12-14"><a href="#cb12-14"></a>  <span class="co"># Set up x, y, fill</span></span>
-<span id="cb12-15"><a href="#cb12-15"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> sales, <span class="at">fill =</span> state)) <span class="sc">+</span></span>
-<span id="cb12-16"><a href="#cb12-16"></a>  </span>
-<span id="cb12-17"><a href="#cb12-17"></a>  <span class="co"># Geometries</span></span>
-<span id="cb12-18"><a href="#cb12-18"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span> <span class="co"># Run up to here to get a stacked bar plot</span></span>
-<span id="cb12-19"><a href="#cb12-19"></a>  </span>
-<span id="cb12-20"><a href="#cb12-20"></a>  <span class="co"># Facet</span></span>
-<span id="cb12-21"><a href="#cb12-21"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> state) <span class="sc">+</span></span>
-<span id="cb12-22"><a href="#cb12-22"></a>  </span>
-<span id="cb12-23"><a href="#cb12-23"></a>  <span class="co"># Formatting</span></span>
-<span id="cb12-24"><a href="#cb12-24"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">dollar_format</span>(<span class="at">big.mark =</span> <span class="st">"."</span>, </span>
-<span id="cb12-25"><a href="#cb12-25"></a>                                                    <span class="at">decimal.mark =</span> <span class="st">","</span>, </span>
-<span id="cb12-26"><a href="#cb12-26"></a>                                                    <span class="at">prefix =</span> <span class="st">""</span>, </span>
-<span id="cb12-27"><a href="#cb12-27"></a>                                                    <span class="at">suffix =</span> <span class="st">" €"</span>)) <span class="sc">+</span></span>
-<span id="cb12-28"><a href="#cb12-28"></a>  <span class="fu">labs</span>(</span>
-<span id="cb12-29"><a href="#cb12-29"></a>    <span class="at">title =</span> <span class="st">"Revenue by year and state"</span>,</span>
-<span id="cb12-30"><a href="#cb12-30"></a>    <span class="at">subtitle =</span> <span class="st">""</span>,</span>
-<span id="cb12-31"><a href="#cb12-31"></a>    <span class="at">fill =</span> <span class="st">"Main category"</span> <span class="co"># Changes the legend name</span></span>
-<span id="cb12-32"><a href="#cb12-32"></a>  ) <span class="sc">+</span> </span>
-<span id="cb12-33"><a href="#cb12-33"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="do">## # A tibble: 25 x 4</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="do">##     year category_1      sales sales_text </span></span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="do">##    &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt; &lt;chr&gt;      </span></span>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="do">##  1  2015 E-Bikes       1599048 1.599.048 €</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="do">##  2  2015 Gravel         663025 663.025 €  </span></span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="do">##  3  2015 Hybrid / City  502512 502.512 €  </span></span>
+<span id="cb10-7"><a href="#cb10-7"></a><span class="do">##  4  2015 Mountain      3254289 3.254.289 €</span></span>
+<span id="cb10-8"><a href="#cb10-8"></a><span class="do">##  5  2015 Road          3911408 3.911.408 €</span></span>
+<span id="cb10-9"><a href="#cb10-9"></a><span class="do">##  6  2016 E-Bikes       1916469 1.916.469 €</span></span>
+<span id="cb10-10"><a href="#cb10-10"></a></span>
+<span id="cb10-11"><a href="#cb10-11"></a></span>
+<span id="cb10-12"><a href="#cb10-12"></a>sales_by_year_cat_1_tbl <span class="sc">%&gt;%</span></span>
+<span id="cb10-13"><a href="#cb10-13"></a>  </span>
+<span id="cb10-14"><a href="#cb10-14"></a>  <span class="co"># Set up x, y, fill</span></span>
+<span id="cb10-15"><a href="#cb10-15"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> sales, <span class="at">fill =</span> state)) <span class="sc">+</span></span>
+<span id="cb10-16"><a href="#cb10-16"></a>  </span>
+<span id="cb10-17"><a href="#cb10-17"></a>  <span class="co"># Geometries</span></span>
+<span id="cb10-18"><a href="#cb10-18"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span> <span class="co"># Run up to here to get a stacked bar plot</span></span>
+<span id="cb10-19"><a href="#cb10-19"></a>  </span>
+<span id="cb10-20"><a href="#cb10-20"></a>  <span class="co"># Facet</span></span>
+<span id="cb10-21"><a href="#cb10-21"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> state) <span class="sc">+</span></span>
+<span id="cb10-22"><a href="#cb10-22"></a>  </span>
+<span id="cb10-23"><a href="#cb10-23"></a>  <span class="co"># Formatting</span></span>
+<span id="cb10-24"><a href="#cb10-24"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">dollar_format</span>(<span class="at">big.mark =</span> <span class="st">"."</span>, </span>
+<span id="cb10-25"><a href="#cb10-25"></a>                                                    <span class="at">decimal.mark =</span> <span class="st">","</span>, </span>
+<span id="cb10-26"><a href="#cb10-26"></a>                                                    <span class="at">prefix =</span> <span class="st">""</span>, </span>
+<span id="cb10-27"><a href="#cb10-27"></a>                                                    <span class="at">suffix =</span> <span class="st">" €"</span>)) <span class="sc">+</span></span>
+<span id="cb10-28"><a href="#cb10-28"></a>  <span class="fu">labs</span>(</span>
+<span id="cb10-29"><a href="#cb10-29"></a>    <span class="at">title =</span> <span class="st">"Revenue by year and state"</span>,</span>
+<span id="cb10-30"><a href="#cb10-30"></a>    <span class="at">subtitle =</span> <span class="st">""</span>,</span>
+<span id="cb10-31"><a href="#cb10-31"></a>    <span class="at">fill =</span> <span class="st">"Main category"</span> <span class="co"># Changes the legend name</span></span>
+<span id="cb10-32"><a href="#cb10-32"></a>  ) <span class="sc">+</span> </span>
+<span id="cb10-33"><a href="#cb10-33"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="01_tidyverse_files/figure-html/unnamed-chunk-1-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="01_tidyverse_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure">
+<p><a href="01_tidyverse_files/figure-html/unnamed-chunk-1-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="01_tidyverse_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
 </div>
 
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -657,7 +672,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":true,"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox"});</script>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":true,"descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom"});</script>
+
 
 
 </body></html>
