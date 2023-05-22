@@ -3,6 +3,80 @@ title: "Data Wrangling"
 author: "Joschka Schwarz"
 ---
 
-::: callout-note
-You can delete everything in here and start fresh.
-:::
+```{r}
+library(vroom)
+library(knitr)
+col_types <- list(
+  id = col_character(),
+  type = col_character(),
+  number = col_character(),
+  country = col_character(),
+  date = col_date("%Y-%m-%d"),
+  abstract = col_character(),
+  title = col_character(),
+  kind = col_character(),
+  num_claims = col_double(),
+  filename = col_character(),
+  withdrawn = col_double()
+)
+
+patent_tbl <- vroom(
+  file       = "patent.tsv", 
+  delim      = "\t", 
+  col_types  = col_types,
+  na         = c("", "NA", "NULL")
+)
+
+assignee_tbl <- vroom(
+  file       = "assignee.tsv", 
+  delim      = "\t", 
+  col_types  = col_types,
+  na         = c("", "NA", "NULL")
+)
+
+patent_assignee_tbl <- vroom(
+  file       = "patent_assignee.tsv", 
+  delim      = "\t", 
+  col_types  = col_types,
+  na         = c("", "NA", "NULL")
+)
+patent_tbl <- vroom(
+  file       = "patent.tsv", 
+  delim      = "\t", 
+  col_types  = col_types,
+  na         = c("", "NA", "NULL")
+)
+
+merged_df <- merge(patent_tbl, patent_assignee_tbl, by.x = "id", by.y = "patent_id")
+merged_df_2 <- merge(merged_df, assignee_tbl, by.x = "assignee_id", by.y = "id")
+
+
+most_common_ids <- sort(table(with(merged_df_2, merged_df_2[(type == 2), ])$assignee_id), decreasing=TRUE)[1:10]
+
+most_common_ids <- names(most_common_ids)
+top_list <- lapply(most_common_ids, function(x) with(assignee_tbl, array(organization[id == x])))
+
+
+
+august <- with(merged_df_2, merged_df_2[(date >= "2014-08-01" & date <= "2014-08-31" & type == 2), ])
+most_common_august <- names(sort(table(merged_df_2$organization), decreasing=TRUE)[1:10])
+
+
+uspc_tbl <- vroom(
+  file       = "uspc.tsv", 
+  delim      = "\t", 
+  col_types  = col_types,
+  na         = c("", "NA", "NULL")
+)
+
+merged_df_3 <- merge(merged_df_2, uspc_tbl, by.x = "id", by.y = "patent_id")
+most_common_world <- names(sort(table(patent_assignee_tbl$assignee_id), decreasing=TRUE)[1:10])
+top_uspto <- lapply(most_common_world, function(x) with(merged_df_3, array(mainclass_id[assignee_id == x])))
+top_uspto <- unlist(top_uspto)
+top_uspto <- names(sort(table(top_uspto), decreasing=TRUE)[1:5])
+
+
+kable(top_list, format = "markdown")
+kable(most_common_august, format = "markdown")
+kable(top_uspto, format = "markdown")
+```
