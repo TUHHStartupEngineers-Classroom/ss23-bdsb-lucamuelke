@@ -1,0 +1,18 @@
+{
+  "hash": "13c09c4f95b695cb56d8868ade14d3b2",
+  "result": {
+    "markdown": "---\ntitle: \"Data Acquisition\"\nauthor: \"Luca Mülke\"\n---\n\n::: {.cell hash='02_data_acquisition_cache/html/unnamed-chunk-1_b7f52c1837cbff67b5f7c8fe01697fa2'}\n\n```{.r .cell-code}\nlibrary(httr)\nlibrary(jsonlite)\nlibrary(knitr)\n\nurl <- \"https://api.openweathermap.org/data/2.5/weather?q=New+York,US&units=metric&appid=de7f0078e2f8223f211a60f3ee3a2b94\"\nresponse <- GET(url)\n\nif (response$status_code == 200) {\n  weather_data <- fromJSON(rawToChar(response$content))\n  temperature <- weather_data$main$temp\n  humidity <- weather_data$main$humidity\n  wind_speed <- weather_data$wind$speed\n  cloud_cover <- weather_data$clouds$all\n  \n  weather_table <- data.frame(\n    \"Temperature\" = temperature,\n    \"Humidity\" = humidity,\n    \"Wind Speed\" = wind_speed,\n    \"Cloud Cover\" = cloud_cover\n  )\n\n  kable(weather_table, format = \"markdown\")\n} else {\n  cat(\"Error:\", response$status_code, response$reason)\n}\n```\n\n::: {.cell-output-display}\n| Temperature| Humidity| Wind.Speed| Cloud.Cover|\n|-----------:|--------:|----------:|-----------:|\n|       15.05|       42|       8.75|           0|\n:::\n:::\n\n::: {.cell hash='02_data_acquisition_cache/html/unnamed-chunk-2_1c381a6caa892681925f435f7e89808d'}\n\n```{.r .cell-code}\n# WEBSCRAPING ----\n\n# 1.0 LIBRARIES ----\n\nlibrary(tidyverse) # Main Package - Loads dplyr, purrr, etc.\nlibrary(rvest)     # HTML Hacking & Web Scraping\nlibrary(xopen)     # Quickly opening URLs\nlibrary(jsonlite)  # converts JSON files to R objects\nlibrary(glue)      # concatenate strings\nlibrary(stringi)   # character string/text processing\nlibrary(xml2)\n\n\nhtml_bike_category  <- read_html(\"https://www.radon-bikes.de/roadbike-gravel/alu/bikegrid/\")\nbike_names_tbl        <- html_bike_category %>%\n  \n  html_nodes(css = \".a-heading--small\")# %>%\n\nnames <- xml_text(bike_names_tbl)\nnames <- names[-c(36, 37)]\nnames <- names[-5]\nnames <- names[-4]\n\nbike_price_tbl        <- html_bike_category %>%\n  \n  html_nodes(css = \".m-bikegrid__price--active\")\n\nprices <- xml_text(bike_price_tbl)\nlibrary(stringr)\nprices <- str_remove(prices, \" ₤\")\nprices <- str_remove(prices, \"₤\")\nprices <- str_remove(prices, \"₤ \")\nprices <- prices[prices != \"\"]\nlibrary(readr)\nprices_numeric <- sapply(prices, parse_number)\nprices_numeric <- unname(prices_numeric)\n\noutput <- rbind(names, prices_numeric)\nkable(output, format = \"markdown\")\n```\n\n::: {.cell-output-display}\n|               |               |            |                |\n|:--------------|:--------------|:-----------|:---------------|\n|names          |R1 DISC TIAGRA |R1 DISC 105 |R1 DISC ULTEGRA |\n|prices_numeric |1299           |1499        |1799            |\n:::\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-in-header": [
+        "<link href=\"../../site_libs/pagedtable-1.1/css/pagedtable.css\" rel=\"stylesheet\" />\r\n<script src=\"../../site_libs/pagedtable-1.1/js/pagedtable.js\"></script>\r\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
