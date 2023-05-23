@@ -17,4 +17,20 @@ ggplot(subset_germany, aes(x = date, y = total_cases, color = location)) + geom_
 Challenge 2
 
 ```{r}
+library(ggplot2)
+library(tidyverse)
+library(scales)
+covid_data_tbl <- read_csv("owid-covid-data.csv")
+reduced <- covid_data_tbl[which(covid_data_tbl$date == "2021-05-14"), ]
+
+
+reduced <- distinct(mutate(reduced, location = case_when(location == "United Kingdom" ~ "UK", location == "United States" ~ "USA", location == "Democratic Republic of Congo" ~ "Democratic Republic of the Congo", TRUE ~ location)))
+
+reduced$mortality_rate <- reduced$total_deaths / reduced$population
+
+world <- ggplot2::map_data("world")
+
+total <- merge(world, reduced, by.x = "region", by.y = "location")
+
+ggplot(total) + geom_map(aes(map_id = region, fill = mortality_rate), map = world) + theme_dark() + expand_limits(x = world$long, y = world$lat) + scale_fill_gradient(low = "red", high = "black", labels = percent_format()) + labs(title = "Confirmed COVID-19 deaths relative to the size of the population", subtitle = "Around 6.2 Million confimed COVID-19 deaths worldwide", caption = "Date: 04/16/2021", fill = "Mortality Rate") + theme(axis.text.x = element_blank(), axis.text.y = element_blank(), axis.title.x = element_blank(), axis.title.y = element_blank()) + borders("world", colour = "black", size = 0.1)
 ```
